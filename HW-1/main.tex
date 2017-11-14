@@ -24,6 +24,9 @@
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
+\usepackage{tikz-qtree}
+\usepackage{lscape}
+
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
@@ -103,5 +106,67 @@ $$
 $$
 memroy = \Omega(n/m)
 $$
+
+\section{سوال سوم}
+
+\begin{landscape}
+\begin{tikzpicture}[every tree node/.style={draw, circle, minimum width=0.8cm}]
+    \matrix{
+        \Tree
+        [.-
+            % 0
+            [.- 
+                % 00
+                [.- $P1$ $P1$ ]
+                % 01
+                [.- 
+                    % 010
+                    [.$P0$
+                        % 010 0
+                        [.-
+                            % 010 00
+                            [.- $P4$ $P4$ ]
+                            % 010 01
+                            [.- - - ]
+                        ]
+                        % 010 1
+                        [.-
+                            % 010 10
+                            [.- $P6$ $P7$ ]
+                            % 010 11
+                            [.- $P2$ $P2$ ]
+                        ]
+                    ]
+                    % 011
+                    [.$P2$
+                        % 011 0
+                        [.-
+                            % 011 00
+                            [.- $P4$ $P4$ ]
+                            % 011 01
+                            [.- $P4$ $P4$ ]
+                        ]
+                        % 011 1
+                        [.-
+                            % 011 10
+                            [.- - - ]
+                            % 011 11
+                            [.- - - ]
+                        ]
+                    ]
+                ]
+            ]
+            % 1
+            [.-
+                % 10
+                [.- $P3$ $P3$ ]
+                % 11
+                [.- $P2$ $P2$ ]
+            ]
+        ]
+        &
+    \\};
+\end{tikzpicture}
+\end{landscape}
 
 \end{document}
