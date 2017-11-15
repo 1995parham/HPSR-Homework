@@ -193,5 +193,48 @@ $$
 \end{landscape}
 
 \section{سوال چهارم}
+\par
+در ابتدا درخت دودویی که با تعداد \lr{prefix}ها شماره‌گذاری شده است، رسم می‌کنیم.
+
+
+\begin{center}
+\begin{tikzpicture}[every tree node/.style={draw, circle, minimum width=0.8cm}]
+    \matrix{
+        \Tree
+            [.14
+                [.9
+                    [.5
+                        [.3*
+                            [.2 1* 1* ]
+                        ]
+                        [.2
+                            [.2*
+                                [.1 1* ]
+                            ]
+                        ]
+                    ]
+                    [.4*
+                        [.3
+                            [.3
+                                [.3* 1* 1* ]
+                            ]
+                        ]
+                    ]
+                ]
+                [.5*
+                    [.3
+                        [.3*
+                            [.2 1*
+                                [.1 1* ]
+                            ]
+                        ]
+                    ]
+                    [.1 1* ]
+                ]
+            ]
+        &
+    \\};
+\end{tikzpicture}
+\end{center}
 
 \end{document}
