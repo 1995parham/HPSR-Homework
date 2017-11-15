@@ -237,4 +237,43 @@ $$
 \end{tikzpicture}
 \end{center}
 
+\par
+روش \lr{subtree-spliting}
+
+\begin{center}
+\begin{latin}
+\begin{tabular}{ l  c  c  c }
+    \hline
+    Index & Bucket Prefixes & Bucket Size & Covering Prefix \\
+    \hline
+    $000^*$ & $000^*, 00010^*, 00011^*$ & 3 & $000^*$ \\
+    $00^*$ & $0011^*, 001110^*$ & 2 & --- \\
+    $0*$ & $01^*, 01101^*, 011010^0, 011011^*$ & 4 & --- \\
+    $10^*$ & $100^*, 10010^*, 100110^*$ & 3 & $1^*$ \\ 
+    $*$ & $1^*, 111^*$ & 2 & --- \\
+    \hline
+\end{tabular}
+\end{latin}
+\end{center}
+
+\par
+ورش \lr{post-order spliting}
+
+\begin{center}
+\begin{latin}
+\begin{tabular}{ l  c  c  c }
+    \hline
+    Index & Bucket Prefixes & Bucket Size & Covering Prefix \\
+    \hline
+    $000^*, 00111^*$ & $000^*, 00010^*, 00011^*, 001110^*$ & 4 & $000^*, 0011^*$ \\
+    $00^*, 011^*$ & $0011^*, 01101^*, 011010^*, 011011^*$ & 4 & $01^*$ \\
+    $0^*, 10^*$ & $01^*, 100^*, 10010^*, 100110^*$ & 4 & $1^*$ \\
+    $*$ & $1^*, 111^*$ & 2 & --- \\
+    \hline
+\end{tabular}
+\end{latin}
+\end{center}
+
+
+
 \end{document}
