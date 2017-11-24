@@ -223,5 +223,72 @@
     \draw[->] (11)--(r11);
 \end{tikzpicture}
 
+\section{سوال سوم}
+
+\begin{tikzpicture}[every tree node/.style={draw, circle, minimum width=0.8cm}]
+    \Tree
+    [.$*$
+        % 0
+        [.$0^*$
+            \node(00){$00^*$};
+            \node(01){$01^*$};
+        ]
+        % 1
+        [. \node(1){$1^*$};
+            \node(10){$10^*$};
+            \node(11){$11^*$};
+        ]
+    ]
+    \begin{scope}[shift={(-1.5in,-1.5in)}]
+        \Tree
+        [. \node(r00){$*$};
+            [. $R7$ ]
+        ]
+    \end{scope}
+    \begin{scope}[shift={(-0.9in,-1.5in)}]
+        \Tree
+        [. \node(r01){$*$};
+            [. $0^*$
+                [. $R2$ ]
+            ]
+            [. $1^*$
+            ]
+        ]
+    \end{scope}
+    \begin{scope}[shift={(1.6in,-0.43in)}]
+        \Tree
+        [. \node(r1){$*$};
+            [. \node(p10){$0^*$};
+                [. $00^*$ [. $R4$ ] ]
+                [. $01^*$ [. $R3$ ] ]
+            ]
+            [. $1^*$
+                [. $10^*$ [. \node(pr6){$R6$}; ] ]
+                [. $11^*$ ]
+            ]
+        ]
+    \end{scope}
+    \begin{scope}[shift={(0.3in,-1.5in)}]
+        \Tree
+        [. \node(r10){$*$};
+            [. \node(p100){$0^*$}; ]
+            [. $1^*$
+                [. \node(p1010){$10^*$}; ]
+                [. $R1$ ]
+                [. $11^*$ ]
+            ]
+        ]
+    \end{scope}
+
+
+    \draw[->] (00)--(r00);
+    \draw[->] (1)--(r1);
+    \draw[->] (01)--(r01);
+    \draw[->] (10)--(r10);
+
+    \draw[dashed, ->] (11)--(r1);
+    \draw[dashed, ->] (p100)--(p10);
+    \draw[dashed, ->] (p1010)--(pr6);
+\end{tikzpicture}
 
 \end{document}
