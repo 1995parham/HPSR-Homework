@@ -63,4 +63,33 @@
 
 \maketitle % Print the title
 
+\section{سوال اول}
+\par
+باس باید بتواند اگر همه پورت‌های ورودی داده داشتند آن‌ها را منتفل کند پس می‌بایست به اندازه‌ی مجموع نرخ همه‌ی پورت‌های ورودی
+ظرفیت داشته باشد.
+\begin{align}\begin{split}
+    BW_{bus} = 24 * 10 = 240 Gb/s
+\end{split}\end{align}
+
+\section{سوال دوم}
+\par
+برای سوئیچ‌هایی با معماری \lr{shared-memory} می‌دانیم:
+\begin{align}\begin{split}
+    2 * N_r \le \frac{T_{cell}}{T_{mem}}
+\end{split}\end{align}
+
+از آنجایی که شبکه‌ای که این سوئیچ به آن متصل است شبکه‌ی \lr{ATM}
+می‌باشد پس اندازه‌ی بسته‌ها در آن ۵۳ بایت می‌باشد.
+\begin{align}\begin{split}
+    T_{cell} = \frac{L_{cell}}{throughput}\\
+    & = \frac{53 * 8}{125 * 10^3} = 3.392 ms
+\end{split}\end{align}
+
+و در نهایت خواهیم داشت:
+\begin{align}\begin{split}
+    N_r = \frac{T_{cell}}{T_{mem}} = \frac{3.392ms}{16ns}\\
+    & = 212
+\end{split}\end{align}
+
+
 \end{document}
